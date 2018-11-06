@@ -107,18 +107,18 @@ $(function () {
 
 
 
-		 //   var svg = d3.select(".right").selectAll(".dayType")
-		 //   	.data(filterNest)
-		 //   	.enter()
-		 //   	.append("div")
-		 //   	.attr("class", "dayType")
-		 //   	.attr("id", function(d) {
-		 //   		if(d.key == "+") {
-		 //   			return "Positive"
-		 //   		} else if (d.key == "-") {
-		 //   			return "Negative"
-		 //   		}
-		 //   	})
+		    var svg = d3.select(".right").selectAll(".dayType")
+		    	.data(filterNest)
+		    	.enter()
+		    	.append("div")
+		    	.attr("class", "dayType")
+		    	.attr("id", function(d) {
+		    		if(d.key == "+") {
+		    			return "Positive"
+		    		} else if (d.key == "-") {
+		    			return "Negative"
+		    		}
+		    	})
 		    	
 			
 			
