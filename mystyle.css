@@ -1,0 +1,180 @@
+body {
+    margin: 0;
+    width:100%;
+    font-family: 'Mukta';
+    color: #684568;
+}
+
+div.tooltip {
+  position: absolute;
+  text-align: center;
+  /*width: 60px;*/
+  /*height: 28px;*/
+  padding: 5px;
+  font-size: 12px;
+  background: #E8DEE8;
+  border: 0px;
+  pointer-events: none;
+  color: gray;
+}
+.container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  align-items: center;
+  justify-content: center;
+}
+
+
+a {
+    color:#684568;
+   
+}
+#title {
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+#main_title, #main_subtitle {
+    margin-left: 25%;
+    line-height: 18px;
+    font-size: 18px;
+    
+}
+#main_title {
+    margin-top: 20px;
+}
+#main_subtitle {
+    color: #E8DEE8;
+}
+
+#skip {
+    font-size:18px;
+}
+.content {
+     margin-top: 20px;
+     margin-left: 25%;
+     font-size: 36px;
+     line-height: 38px;
+     width: 50%;
+}
+
+.arrow{
+    color:#E8DEE8;
+    
+    animation: glow 3s infinite alternate;
+}
+.arrow:hover {
+    color: #684568;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 0px #684568;
+  }
+  to {
+    text-shadow: 0 0 25px #684568;
+  }
+}
+
+#subtitle {
+    margin-left: 20px;
+    color: gray;
+    line-height: 18px;
+}
+
+#all {
+    display: flex;
+    flex-direction: row;
+    width: 100%; 
+
+}
+
+.left{
+    width: 15%;
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    padding-left: 20px;
+    justify-content: space-between;
+}
+
+.legend {
+    margin-top: 20px;
+    font-size: 12px;
+    padding-left: 6px;
+}
+
+img{
+    height: 10px;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: column;
+}
+
+button {
+    width:90%;
+    margin: 0px 5px 5px;
+    background-color: #E8DEE8;
+    border: 0;
+    font-family: inherit;
+    font-size: 12px;
+    font-style: bold
+}
+
+button:hover, button.clicked{
+    background-color: gray;
+}
+
+.right_side {
+  display: flex;
+  flex-direction: column;
+  width: 85%;
+  padding:20px;
+}
+
+.right {
+  display: flex;
+  flex-direction: row;
+  height:100%;
+
+}
+
+.dayType{
+    display: flex;
+    flex-direction: column;
+    margin-right: 2%;
+    box-shadow: 0 0 20px 5px #E8DEE8;
+    /*width: 45%;*/
+    /*height:100%;*/
+}
+
+/*#Positive {
+    box-shadow: 0 0 20px 5px #8856a7;
+}
+
+#Negative {
+    box-shadow: 0 0 20px 5px #9ebcda;
+}
+
+#Ambiguous {
+    box-shadow: 0 0 20px 5px #e0ecf4;
+}*/
+
+.title_bar {
+    padding-left: 15px;
+    padding-top: 5px;
+}
+
+.label {
+    font-size: 12px;
+}
+
+.buttons .label {
+    padding-left: 6px;
+}

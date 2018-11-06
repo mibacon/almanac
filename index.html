@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- <meta name="viewport" width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0> -->
+    <style> body {padding: 0; margin: 0;} </style>
+    <link rel="stylesheet" type="text/css" href="mystyle.css">
+    <script src="jquery-3.3.1.min.js"></script>
+    <!-- <script src="./p5.min.js"></script> -->
+    <script src="d3.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Slab|Mukta|Oswald|Rubik" rel="stylesheet">
+     <!-- <script src="https://d3js.org/d3.v4.js"></script>  -->
+  </head>
+  <body>
+      <script src="waffle2.js"></script>
+      <div id = "title"> Common Babylonian Religious Praxis: <span style="color:gray;"> A statistical comparisons of religious theory and practice </span> </div>
+      <div id= "subtitle"> 
+      How did Babylonians and Non-Babylonians conform  to the Babylonian Almanac? 
+      Below is a visualization of 6,000 individuals and whether they conducted a transaction on a positive or negative day (per the Babylonian Almanac). 
+      </div> <div id = "all">
+        
+
+        <div class ="left">
+          <div class="buttons">
+            <div class="label"> <strong> Filter by:</strong>  <br> <br></div>
+           
+            <button type="button" id="ALL"> ALL </button>
+            <button type="button" id="Archive"> SOURCE </button>
+            <button type="button" id="Reign"> REIGN </button>
+            <button type="button" id= "Month"> MONTH </button>
+            <button type="button" id= "father_eth"> FATHER'S ETHNICITY </button>
+          </div>
+          <div class="legend">
+            <div class="babLeg">
+              <div class="label"> <strong> Legend </strong> </div>
+              <img src="blue.png"> <span> Babylonian Individual</span>
+            </div>
+            <div class="nonBab">
+              <img src="orange.png"> <span> Non-Babylonian Individual </span>
+            </div>
+            <div class="other">
+              <img src="gray.png"> <span> Other/Undetermined Individual</span>
+            </div>
+            <text> * signficiant </text>
+          </div>
+        </div>
+        <div class ="right_side"> 
+          <div class="label"> <strong> Transaction took place on:</strong> <br> <br></div>
+         
+          <div class ="right"> </div>
+        </div>
+      </div>
+  </body>
+</html>
