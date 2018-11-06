@@ -124,7 +124,7 @@ $(function () {
 			
 			width = $('.dayType').width()
 			numPerRow = Math.floor(width/(size+1))
-			console.log(width)
+			console.log('width is'  + width + ' and numperrow is '+ numPerRow)
 	
 
 			var scale = d3.scaleLinear()
@@ -174,7 +174,7 @@ $(function () {
 
 					
 				})
-				.attr("transform", "translate(" + (width- 20) + "," + 25 + ")")
+				.attr("transform", "translate(" + (width-30) + "," + 25 + ")")
 				.attr("text-anchor", "end")
 				.attr("font-size", "10px")
 				
