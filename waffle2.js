@@ -107,151 +107,151 @@ $(function () {
 
 
 
-		    var svg = d3.select(".right").selectAll(".dayType")
-		    	.data(filterNest)
-		    	.enter()
-		    	.append("div")
-		    	.attr("class", "dayType")
-		    	.attr("id", function(d) {
-		    		if(d.key == "+") {
-		    			return "Positive"
-		    		} else if (d.key == "-") {
-		    			return "Negative"
-		    		}
-		    	})
+		 //   var svg = d3.select(".right").selectAll(".dayType")
+		 //   	.data(filterNest)
+		 //   	.enter()
+		 //   	.append("div")
+		 //   	.attr("class", "dayType")
+		 //   	.attr("id", function(d) {
+		 //   		if(d.key == "+") {
+		 //   			return "Positive"
+		 //   		} else if (d.key == "-") {
+		 //   			return "Negative"
+		 //   		}
+		 //   	})
 		    	
 			
 			
-			width = $('.dayType').width()
-			numPerRow = Math.floor(width/(size+1))
-			console.log(numPerRow)
+			// width = $('.dayType').width()
+			// numPerRow = Math.floor(width/(size+1))
+			// console.log(numPerRow)
 		    
 	
 
-			var scale = d3.scaleLinear()
-				.domain([0, numPerRow -1])
-			  	.range([0, size * numPerRow])
+			// var scale = d3.scaleLinear()
+			// 	.domain([0, numPerRow -1])
+			//   	.range([0, size * numPerRow])
 		  	
 		  	
-		    svg.append("div").attr("class","title_bar").append("text")
-		    	.text(function(d) {
-		    		if(d.key == "+") {
-		    			return "POSITIVE DAYS"
-		    		} else if (d.key == "-") {
-		    			return "NEGATIVE DAYS"
-		    		}})
-		    	.attr("transform", "translate(" + margin.left + "," + 20 + ")")
+		 //   svg.append("div").attr("class","title_bar").append("text")
+		 //   	.text(function(d) {
+		 //   		if(d.key == "+") {
+		 //   			return "POSITIVE DAYS"
+		 //   		} else if (d.key == "-") {
+		 //   			return "NEGATIVE DAYS"
+		 //   		}})
+		 //   	.attr("transform", "translate(" + margin.left + "," + 20 + ")")
 		    	
 		    	
 			    
-			var subSvg = svg.selectAll(".selectedGroups")
-				.data(function(d) {return d.values})
-				.enter()
-				.append("svg")
-				.attr("class", "selectedGroups")
-				.attr("height", function(d) {
-					return (nest.stats[d.key]/numPerRow*size) + 65
-				})
+			// var subSvg = svg.selectAll(".selectedGroups")
+			// 	.data(function(d) {return d.values})
+			// 	.enter()
+			// 	.append("svg")
+			// 	.attr("class", "selectedGroups")
+			// 	.attr("height", function(d) {
+			// 		return (nest.stats[d.key]/numPerRow*size) + 65
+			// 	})
 					
 
-				// console.log(nest)
+			// 	// console.log(nest)
 			
-			subSvg.append("text")
-				.text(function(d) { return d.key})
-				.attr("transform", "translate(" + margin.left + "," + 25 + ")")
-				.attr("font-size", "14px")
+			// subSvg.append("text")
+			// 	.text(function(d) { return d.key})
+			// 	.attr("transform", "translate(" + margin.left + "," + 25 + ")")
+			// 	.attr("font-size", "14px")
 				
 			
-			subSvg.append("text")
-				.text(function(d) { 
-					if(nest.stats.significance[field].indexOf(d.key) >=0 ) { 
-							return "Bab:" + d.stats.perBab + "	 NonBab:" + d.stats.perNonB  + " *"
+			// subSvg.append("text")
+			// 	.text(function(d) { 
+			// 		if(nest.stats.significance[field].indexOf(d.key) >=0 ) { 
+			// 				return "Bab:" + d.stats.perBab + "	 NonBab:" + d.stats.perNonB  + " *"
 	
-					} else {
-						return "Bab:" + d.stats.perBab + " 	NonBab:" + d.stats.perNonB 
-					}
+			// 		} else {
+			// 			return "Bab:" + d.stats.perBab + " 	NonBab:" + d.stats.perNonB 
+			// 		}
 
 					
-				})
-				// .attr("transform", "translate(" + 282 + "," + 25 + ")")
-				.attr("transform", "translate(" + 438 + "," + 25 + ")")
-				.attr("text-anchor", "end")
-				.attr("font-size", "10px")
+			// 	})
+			// 	// .attr("transform", "translate(" + 282 + "," + 25 + ")")
+			// 	.attr("transform", "translate(" + 438 + "," + 25 + ")")
+			// 	.attr("text-anchor", "end")
+			// 	.attr("font-size", "10px")
 				
 
 						
 			
-			var waffle = subSvg.append("g")
-		        .attr("class", "waffle")
-		        .attr("transform", "translate(" + margin.left + "," + 30 + ")");
+			// var waffle = subSvg.append("g")
+		 //       .attr("class", "waffle")
+		 //       .attr("transform", "translate(" + margin.left + "," + 30 + ")");
 	
 
-			var cells = waffle.selectAll("rect")
-				.data(function(d) {return d.values})
-				.enter().append('rect')
-				.sort(function(x, y){
-					if(x.key == "+/-") {console.log(x.new_eth)}
-				   return d3.ascending(x.new_eth, y.new_eth);
-				})
-				.attr('x', (d, i) => {
-			    	var n = i % numPerRow
-			    	return scale(n)
-			  	})
-			  	.attr('y', (d, i) => {
-			    	var n = Math.floor(i / numPerRow)
-			    	return scale(n)
-				  	}) 
-			  	.attr('width', size)
-			  	.attr('height', size)
-			  	.attr('fill', function(d) {
-			  		if(d.new_eth == "b") {
-			  			return "#299AE8"
-			  		} else if (d.new_eth == "n") {
-			  			return "#20DFFF"
-			  		} else if( d.new_eth == "x") {
-			  			return "silver"
-			  		} else {
-			  			return "white"
-			  		}
-			  	})
-		  		.attr('stroke-width', 2)
-		  		.attr('stroke', 'white')
-		  		.attr('class', function(d){ return d.Text_Publication_Number})
+			// var cells = waffle.selectAll("rect")
+			// 	.data(function(d) {return d.values})
+			// 	.enter().append('rect')
+			// 	.sort(function(x, y){
+			// 		if(x.key == "+/-") {console.log(x.new_eth)}
+			// 	   return d3.ascending(x.new_eth, y.new_eth);
+			// 	})
+			// 	.attr('x', (d, i) => {
+			//     	var n = i % numPerRow
+			//     	return scale(n)
+			//   	})
+			//   	.attr('y', (d, i) => {
+			//     	var n = Math.floor(i / numPerRow)
+			//     	return scale(n)
+			// 	  	}) 
+			//   	.attr('width', size)
+			//   	.attr('height', size)
+			//   	.attr('fill', function(d) {
+			//   		if(d.new_eth == "b") {
+			//   			return "#299AE8"
+			//   		} else if (d.new_eth == "n") {
+			//   			return "#20DFFF"
+			//   		} else if( d.new_eth == "x") {
+			//   			return "silver"
+			//   		} else {
+			//   			return "white"
+			//   		}
+			//   	})
+		 // 		.attr('stroke-width', 2)
+		 // 		.attr('stroke', 'white')
+		 // 		.attr('class', function(d){ return d.Text_Publication_Number})
 		  			
-		  		.style("opacity", 1)
-				.on("mouseover", function(d) {
-				// 	d3.selectAll("." + this.getAttribute('class')).style("opacity", .5)
-				// })
+		 // 		.style("opacity", 1)
+			// 	.on("mouseover", function(d) {
+			// 	// 	d3.selectAll("." + this.getAttribute('class')).style("opacity", .5)
+			// 	// })
 
-			       div.transition()
-			         .duration(200)
-			         .style("opacity", .9);
-			       div.html("Document: " + d.Text_Publication_Number + "<br/> Date: " + d.Date_MMDD)
-			         .style("left", (d3.event.pageX) + "px")
-			         .style("top", (d3.event.pageY - 28) + "px");
-			       })
-			     .on("mouseout", function(d) {
-			     	// d3.selectAll("."+ this.getAttribute('class')).style("opacity", 1) })
-			       div.transition()
-			         .duration(500)
-			         .style("opacity", 0);
-			       })
+			//       div.transition()
+			//          .duration(200)
+			//          .style("opacity", .9);
+			//       div.html("Document: " + d.Text_Publication_Number + "<br/> Date: " + d.Date_MMDD)
+			//          .style("left", (d3.event.pageX) + "px")
+			//          .style("top", (d3.event.pageY - 28) + "px");
+			//       })
+			//      .on("mouseout", function(d) {
+			//      	// d3.selectAll("."+ this.getAttribute('class')).style("opacity", 1) })
+			//       div.transition()
+			//          .duration(500)
+			//          .style("opacity", 0);
+			//       })
 
 
 		}
 
-		// $('button').on("click", function(){
-		// 	if(!$(this).hasClass("clicked")) {
-		// 		$('.clicked').removeClass()
-		// 		$(this).addClass("clicked")
+		$('button').on("click", function(){
+			if(!$(this).hasClass("clicked")) {
+				$('.clicked').removeClass()
+				$(this).addClass("clicked")
 
-		// 		var selection = $(this).attr("id")
+				var selection = $(this).attr("id")
 				
 
-		// 		update(selection)
+				update(selection)
 
-		// 	}
-		// })
+			}
+		})
 
 		// $(window).on('resize', function(){
 		// 	width = $('.dayType').width()
