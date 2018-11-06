@@ -9,7 +9,7 @@ $(function () {
 	var totalWidth = window.innerWidth
 	var width, numPerRow, size = 10;
 	
-	d3.json("data.json", function(data){
+	d3.json("./data.json", function(data){
 		
 				
 		var div = d3.select("body").append("div")
