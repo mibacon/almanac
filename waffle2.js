@@ -174,7 +174,7 @@ $(function () {
 
 					
 				})
-				.attr("transform", "translate(" + 438 + "," + 25 + ")")
+				.attr("transform", "translate(" + (width- 20) + "," + 25 + ")")
 				.attr("text-anchor", "end")
 				.attr("font-size", "10px")
 				
