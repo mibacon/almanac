@@ -6,48 +6,85 @@
     <link rel="stylesheet" type="text/css" href="mystyle.css">
     <script src="jquery-3.3.1.min.js"></script>
     <!-- <script src="./p5.min.js"></script> -->
-    <script src="d3.min.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Josefin+Slab|Mukta|Oswald|Rubik" rel="stylesheet">
+    
+   <link href="https://fonts.googleapis.com/css?family=Josefin+Slab|Mukta|Oswald|Rubik" rel="stylesheet">
      <!-- <script src="https://d3js.org/d3.v4.js"></script>  -->
   </head>
   <body>
-      <script src="waffle2.js"></script>
-      <div id = "title"> Common Babylonian Religious Praxis: <span style="color:gray;"> A statistical comparisons of religious theory and practice </span> </div>
-      <div id= "subtitle"> 
-      How did Babylonians and Non-Babylonians conform  to the Babylonian Almanac? 
-      Below is a visualization of 6,000 individuals and whether they conducted a transaction on a positive or negative day (per the Babylonian Almanac). 
-      </div> <div id = "all">
-        
+      <div id ="container">
+        <div id="main_title"> Common Babylonian Religious Praxis </div>
+        <div id="main_subtitle"> A statistical comparisons of religious theory and practice </div>
+        <div class="content"> <p><strong> Introduction</strong> </p>
+        <p>The ancient city of Nippur was a vibrant and ethnically diverse polis populated by Babylonians and Non-Babylonians alike. <br> <br>
+        We set out to learn to what degree did Non-Babylonians differ from Babylonians in their religious observance. <span class="arrow"> &#9654</span></p> 
+        <br> 
+        <a href="./index.html" id="skip">Skip Intro</a>
+        </div>
+        <div class="content">
+          <p> Traditionally, scholars have turned to priestly and regal texts to learn about a civilization. <br> <br>
+          However, these texts can only reveal how the elite groups practiced their relgions and shed little light on the practices and beliefs of the commoners.
+          <span class="arrow"> &#9654</span></p> 
+          
+          </div>
+        <div class="content"><p>
+          What information could there be that may uncover the religious participation of regular folk? <br> <br>
+          And, how much did such potential religious participation have to do with ethnicity?
+        <span class="arrow"> &#9654</span></p></div>
+        <div class="content">
+          <p> In order to gain access to non-elite social circles, we combined information from two types of texts: <br> <br>
+          common texts recording the transactions of middle class people;<br> <br>
+          and a religious text known today as the <strong>Babylonian Almanac</strong>, which notes for each day of the calendar year whether it is positive/lucky or not.
+          <span class="arrow"> &#9654</span></p></div>
+        <div class="content">
+          <p>Our expectation was that Babylonians would proscribe to the <strong>Babylonian Almanac</strong> and would avoid doing business on negative days, while targeting positive days for their transactions. <br> <br>
+          On the other hand, the transactions of non-Babylonians would be evenly distributed on both positive and negative days.<span class="arrow"> &#9654</span></p>
+        </div>
+        <div class="content">
+        <p>
+          We collected 6,000 personal names from 600 texts, tagged them as either Babylonians or non-Babylonians.<br> <br>
+          We then determined whether they conducted a transaction on a positive ("good luck") or negative("bad luck") day.<br> <br>
+          Finally, we analyzed whether there was any difference in adherence to the <strong>Babylonian Almanac</strong> based on ethnicity.
+        <span class="arrow"> &#9654</span></p></div>
+        <div class="content">
+        <p>
+          We also divided the individuals into seperate groupings to determine if there were any other trends. <br> <br>
+          For instance, are there differences in practice based on the time of year of the transaction? What about over the course of time, from one king to the next?
+        <span class="arrow"> &#9654</span></p></div>
+        <div class="content">
+        <p>
+          In this visualization, each individual that conducted a transaction is represeted by a <img src="blue.png" style="width:20px;height:20px;">. <br> <br>
+          The color of the square indicates ethnicity (Babylonian, Non-Babylonian, or Unknown). <br> <br>
+          
+        </p>
+        <a href="./index.html">Explore</a></div>
+      </div>  
 
-        <div class ="left">
-          <div class="buttons">
-            <div class="label"> <strong> Filter by:</strong>  <br> <br></div>
-           
-            <button type="button" id="ALL"> ALL </button>
-            <button type="button" id="Archive"> SOURCE </button>
-            <button type="button" id="Reign"> REIGN </button>
-            <button type="button" id= "Month"> MONTH </button>
-            <button type="button" id= "father_eth"> FATHER'S ETHNICITY </button>
-          </div>
-          <div class="legend">
-            <div class="babLeg">
-              <div class="label"> <strong> Legend </strong> </div>
-              <img src="blue.png"> <span> Babylonian Individual</span>
-            </div>
-            <div class="nonBab">
-              <img src="orange.png"> <span> Non-Babylonian Individual </span>
-            </div>
-            <div class="other">
-              <img src="gray.png"> <span> Other/Undetermined Individual</span>
-            </div>
-            <text> * signficiant </text>
-          </div>
-        </div>
-        <div class ="right_side"> 
-          <div class="label"> <strong> Transaction took place on:</strong> <br> <br></div>
-         
-          <div class ="right"> </div>
-        </div>
+      <script>
+        $(document).ready(function () {
+          
+          var divs = $('.content').hide()
+          // $('div[class="content"]').hide(),
+          var i = 0;
+          
+          
+          function cycle() {
+              console.log($('.content').eq(i))
+              console.log(i)
+              divs.fadeOut(400).delay(400).eq(i).fadeIn(400);
+              i = ++i 
+              
+              
+              //% divs.length;
+          }
+          
+          cycle()
+          
+          $('.content').click(function(){cycle()})
+       
+        });
+      </script>
+        
+          
       </div>
   </body>
 </html>
