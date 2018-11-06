@@ -240,18 +240,18 @@ $(function () {
 
 		}
 
-		$('button').on("click", function(){
-			if(!$(this).hasClass("clicked")) {
-				$('.clicked').removeClass()
-				$(this).addClass("clicked")
+		// $('button').on("click", function(){
+		// 	if(!$(this).hasClass("clicked")) {
+		// 		$('.clicked').removeClass()
+		// 		$(this).addClass("clicked")
 
-				var selection = $(this).attr("id")
+		// 		var selection = $(this).attr("id")
 				
 
-				update(selection)
+		// 		update(selection)
 
-			}
-		})
+		// 	}
+		// })
 
 		// $(window).on('resize', function(){
 		// 	width = $('.dayType').width()
