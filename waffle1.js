@@ -21,7 +21,8 @@ $(function () {
 			// height = totalHeight - margin.top - margin.bottom;
 		var legend = $('.legend').html("<strong>Transaction occured on: </strong>" + '<br>')
 			legend.append('<img src="blue.png" style="height:10px"> ').append("  Positive Day <br>")
-			legend.append('<img src="orange.png" style="height:10px"> ').append("  Negative Day")
+			legend.append('<img src="orange.png" style="height:10px"> ').append("  Negative Day <br>")
+			legend.append("*significant")
 		d3.select('.right_side .label').html("Individual's Ethnicity:" + "<br> <br>")
 		  	
 		  	
