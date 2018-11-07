@@ -5,6 +5,17 @@ body {
     color: #684568;
 }
 
+#background {
+    opacity: 0.3;
+    position: absolute;
+    z-index: -1;
+    
+}
+
+img {
+    object-fit: cover;
+}
+
 div.tooltip {
   position: absolute;
   text-align: center;
@@ -17,6 +28,7 @@ div.tooltip {
   pointer-events: none;
   color: gray;
 }
+
 .container {
   height: 100%;
   width: 100%;
@@ -37,17 +49,17 @@ a {
     margin-top: 20px;
 }
 
-#main_title, #main_subtitle {
-    margin-left: 25%;
-    line-height: 18px;
-    font-size: 18px;
-    
-}
+
 #main_title {
-    margin-top: 20px;
+    margin-left: 25%;
+    line-height: 38px;
+    font-size: 36px;
+    padding-top: 20px;
 }
 #main_subtitle {
-    color: #E8DEE8;
+    margin-left: 25%;
+    color: gray;
+    font-size:18px;
 }
 
 #skip {
@@ -56,18 +68,18 @@ a {
 .content {
      margin-top: 20px;
      margin-left: 25%;
-     font-size: 36px;
-     line-height: 38px;
+     font-size: 18px;
+     line-height: 18px;
      width: 50%;
 }
 
 .arrow{
-    color:#E8DEE8;
+    color:#684568;
     
     animation: glow 3s infinite alternate;
 }
 .arrow:hover {
-    color: #684568;
+    color: gray;
 }
 
 @keyframes glow {
@@ -108,7 +120,7 @@ a {
     padding-left: 6px;
 }
 
-img{
+img.square{
     height: 10px;
 }
 
@@ -173,6 +185,7 @@ button:hover, button.clicked{
 
 .label {
     font-size: 12px;
+    font-weight: bold; 
 }
 
 .buttons .label {

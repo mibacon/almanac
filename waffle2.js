@@ -16,15 +16,15 @@ $(function () {
 			    .attr("class", "tooltip")
 			    .style("opacity", 0);
 	
-		var margin = {top:0, right:50, bottom:40, left:15},
+		var margin = {top:0, right:50, bottom:40, left:15}
 	    	//width = 500 - margin.left - margin.right,
-			height = totalHeight - margin.top - margin.bottom;
+			// height = totalHeight - margin.top - margin.bottom;
 		
-		
+		d3.select('.right_side .label').html("Transaction took place on:" + "<br> <br>")
 
 		  	
 		  	
-		var update = function(field) {
+		function update(field) {
 			var month_order = ["Nisannu", "Ayyaru", "Simanu", "Du'uzu", "Abu", "Elulu", "Tasritu", "Arahsamnu", "Kislimu", "Tebetu", "Sabatu", "Addaru"];
 			var king_order = ["Nebuchadnezzar II", "Amel-Marduk","Nabonidus", "Cyrus", "Cambyses",  "Bardiya", "Nebuchadnezzar IV", "DariusI", "Xerxes", "Artaxerxes I", "Darius II", "Unlisted"]
 
@@ -102,7 +102,7 @@ $(function () {
 				"father_eth": ["Non-Babylonian"]
 			}
 
-			console.log(nest.stats)
+			console.log(nest)
 			var filterNest = nest.filter(function(d) {return ((d.key == "+")||(d.key == "-"))})
 
 
